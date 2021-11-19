@@ -1,0 +1,105 @@
+﻿@import "src/assets/scss/abstracts/_colors";
+@import "src/assets/scss/abstracts/_mixins";
+@import "src/assets/scss/abstracts/_reset";
+stepper .stepper-panel_title {
+  margin-bottom: 10px;
+}
+
+.stepper-panel {
+  height: 60px;
+  .stepper-container {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.step:last-child {
+  justify-content: flex-end;
+}
+
+.step:first-child {
+  justify-content: flex-start;
+}
+.step:nth-child(2) .connect-line {
+  background-color: $body-color;
+}
+
+.step:last-child .connect-line {
+  top: 17.5;
+  right: calc(40% + 20px);
+  left: calc(-25% + 20px);
+}
+
+.step {
+  @include getStepNums(3);
+  flex: 1;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  display: flex;
+
+  .circle-container {
+    position: relative;
+    height: 35px;
+    width: 35px;
+    border: 1px solid $light-gray;
+    border-radius: 50%;
+    color: $light-gray;
+    line-height: 35px;
+  }
+
+  &.checked,
+  &.active {
+    .circle-container {
+      background-color: $body-color;
+      border: 1px solid $body-color;
+      color: $body-bg;
+    }
+    .connect-line {
+      background-color: $body-color;
+    }
+    .label-container {
+      color: $body-color;
+    }
+  }
+
+  .connect-line {
+    display: block;
+    height: 2px;
+    background-color: $grayish;
+    position: absolute;
+    top: 17.5px;
+    right: calc(75% + 20px);
+    left: calc(-60% + 20px);
+  }
+}
+.step.checked .circle-container {
+  background-color: $body-color;
+  border: 1px solid $body-color;
+  color: $body-bg;
+}
+
+.step.checked .circle-container::after {
+  content: "\2714";
+}
+.label-container {
+  all: unset;
+  line-height: 35px;
+  margin-left: 15px;
+  color: $light-gray;
+}
+
+.step .connect-line {
+  right: calc(80% + 25px);
+  left: calc(-40% + 25px);
+}
+
+.step:last-child .connect-line {
+  right: calc(60% + 25px);
+  left: calc(-20% + 25px);
+}
+//Stepper
+@media screen and (min-width: 376px) {
+}

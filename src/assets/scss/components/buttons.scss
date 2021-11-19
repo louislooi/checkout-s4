@@ -1,0 +1,53 @@
+﻿@import "src/assets/scss/abstracts/_colors";
+@import "src/assets/scss/abstracts/_reset";
+//Buttons
+.control-panel {
+  height: 46px;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-next {
+  background-color: #f67599;
+  border-radius: 8px;
+  color: #fff;
+  width: 100%;
+}
+
+.btn-prev {
+  border-radius: 8px;
+  width: 140px;
+  margin-right: 20%;
+}
+
+@media screen and (min-width: 376px) {
+  .form_btn-control {
+    width: 50%;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 40px;
+  }
+
+  .form_btn-control:before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    top: -20px;
+    position: absolute;
+    background-color: #e6e6eb;
+  }
+
+  .btn-prev {
+    color: $black;
+    width: 70px;
+  }
+
+  .btn-next {
+    width: 40%;
+  }
+  .single_btn {
+    justify-content: flex-end;
+  }
+}
