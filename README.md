@@ -1,4 +1,5 @@
-# checkout
+# Checkout
+The is a checkout page demo built with Vue 2.
 
 ## Project setup
 ```
